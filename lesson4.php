@@ -18,9 +18,10 @@
 // 100円玉で購入した場合、
 // 50円足りません。
 
-function calc($yen, $product) {
+function calc($yen, $product)
+{
     $change = $yen - $product;
-    
+
     if ($change < 0) {
         echo $yen . "円で購入した場合、" . '<br>';
         echo abs($change) . "円足りません。";
@@ -28,7 +29,7 @@ function calc($yen, $product) {
         $coins = [10000, 5000, 1000, 500, 100, 50, 10, 5, 1];
         $coin_names = ['10000円札', '5000円札', '1000円札', '500円玉', '100円玉', '50円玉', '10円玉', '5円玉', '1円玉'];
         $change_coins = [];
-        
+
         foreach ($coins as $coin) {
             $count = floor($change / $coin);
             $change_coins[$coin_names[array_search($coin, $coins)]] = $count;
@@ -45,10 +46,12 @@ function calc($yen, $product) {
 
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="utf-8">
-<title>お釣り</title>
+    <meta charset="utf-8">
+    <title>お釣り</title>
 </head>
+
 <body>
     <section>
         <?php
@@ -58,4 +61,5 @@ function calc($yen, $product) {
         ?>
     </section>
 </body>
+
 </html>
